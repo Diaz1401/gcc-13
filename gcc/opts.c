@@ -2319,7 +2319,10 @@ common_handle_option (struct gcc_options *opts,
       break;
 
     case OPT_Werror:
-      dc->warning_as_error_requested = value;
+      if (getenv("GCC_IGNORE_WERROR"))
+	dc->warning_as_error_requested = false;
+      else
+	dc->warning_as_error_requested = value;
       break;
 
     case OPT_Werror_:
