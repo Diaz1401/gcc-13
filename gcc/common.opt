@@ -2428,6 +2428,11 @@ fprofile-info-section=
 Common Joined RejectNegative Var(profile_info_section)
 Register the profile information in the specified section instead of using a constructor/destructor.
 
+
+fkernel-pgo
+Common Var(flag_kernel_pgo) Optimization Init(0)
+Disable TLS setting of instrumentation variables to support PGO kernel compilation in -fprofile-generate, as kernel does not support TLS.
+
 fprofile-partial-training
 Common Var(flag_profile_partial_training) Optimization
 Do not assume that functions never executed during the train run are cold.
